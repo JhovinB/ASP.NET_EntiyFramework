@@ -113,6 +113,7 @@ namespace Web_EntityFramework.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Student student = db.Student.Find(id);
+            student.Enable = false;
             db.Student.Remove(student);
             db.SaveChanges();
             return RedirectToAction("Index");

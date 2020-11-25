@@ -112,6 +112,7 @@ namespace Web_EntityFramework.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Course course = db.Course.Find(id);
+            course.Enable = false;
             db.Course.Remove(course);
             db.SaveChanges();
             return RedirectToAction("Index");
